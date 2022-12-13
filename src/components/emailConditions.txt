@@ -1,0 +1,47 @@
+const regexPattern = /^[(\w\d\W)+]+@[\w+]+\.[\w+]+$/i;
+
+let str="nitishjha519@gmail.org"
+
+let regForAt=/@/g
+
+let res=str.match(regForAt)
+
+if(res==null || undefined ){
+    console.log("invalid email, it should contain @")
+} else{
+    if(res.length ===1){
+      console.log("valid email")
+    } else{
+        console.log("invalid email, it should contain one @")
+    }
+    
+}
+let regForDot=/\./
+
+let result=regForDot.test(str)
+console.log(result ==true?"valid" : "dot is missing")
+
+let regForDomain=/(.com|.org)$/
+
+let resultant=regForDomain.test(str)
+if(resultant==true){
+    console.log("valid domain")
+} else{
+       console.log("invalid domain")
+}
+
+
+https://www.ocpsoft.org/tutorials/regular-expressions/and-in-regex
+https://www.ocpsoft.org/tutorials/regular-expressions/password-regular-expression/
+
+Achieving logical “and” with Look-aheads
+^                                            Match the beginning of the string
+(?=.*[0-9])                                  Require that at least one digit appear anywhere in the string
+(?=.*[a-z])                                  Require that at least one lowercase letter appear anywhere in the string
+(?=.*[A-Z])                                  Require that at least one uppercase letter appear anywhere in the string
+(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\])    Require that at least one special character appear anywhere in the string
+.{8,32}                                      The password must be at least 8 characters long, but no more than 32
+$                                            Match the end of the string.
+
+
+
